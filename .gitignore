@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+env/
+venv/
+
+# VSCode
+.vscode/
+
+# Docker
+*.log
+*.pid
+
+# System
+.DS_Store
+Thumbs.db
+
+# Pytest / Coverage
+.coverage
+htmlcov/
+
+# GitHub workflows artifacts
+*.bak
+*.swp
