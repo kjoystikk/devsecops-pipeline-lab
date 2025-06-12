@@ -28,9 +28,13 @@ jobs:
       - name: "Basic test: run app"
         run: |
           source venv/bin/activate
-          python app.py &
+          pythogn app.py &
           sleep 3
           curl --fail http://127.0.0.1:5000/ || (echo "App failed to respond!" && exit 1)
 
       - name: Build Docker image
         run: docker build -t my-secure-app:latest .
+      - name: Run Semgrep scan
+        uses: returntocorp/semgrep-action@v1
+        with:
+          config: "p/ci"
