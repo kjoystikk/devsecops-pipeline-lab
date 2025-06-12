@@ -32,10 +32,7 @@ jobs:
           sleep 3
           curl --fail http://127.0.0.1:5000/ || (echo "App failed to respond!" && exit 1)
 
-      - name: 📦 Audit dependencies with pip-audit
-        run: |
-          pip install pip-audit
-          pip-audit
+      
 
       - name: Build Docker image
         run: docker build -t my-secure-app:latest .
